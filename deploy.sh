@@ -19,8 +19,33 @@ git commit -m "Auto-deploy: $timestamp"
 echo "Pushing to main branch..."
 git push origin main
 
-# Push to gh-pages
-echo "Deploying to gh-pages..."
-git subtree push --prefix dist origin gh-pages
+# Create a temporary directory for deployment
+echo "Preparing deployment..."
+rm -rf temp-deploy
+mkdir temp-deploy
+cp -r dist/* temp-deploy/
 
-echo "Deployment complete! Your changes are live at: https://nitturkaryash.github.io/chic-salon-ecosystem-main/" 
+# Switch to gh-pages branch
+echo "Switching to gh-pages branch..."
+git checkout gh-pages || git checkout -b gh-pages
+
+# Clean the working directory
+rm -rf assets index.html
+
+# Copy the new build
+cp -r temp-deploy/* .
+rm -rf temp-deploy
+
+# Add and commit changes
+git add .
+git commit -m "Deploy: $timestamp"
+
+# Push to gh-pages
+echo "Pushing to gh-pages..."
+git push origin gh-pages --force
+
+# Switch back to main branch
+git checkout main
+
+echo "Deployment complete! Your changes will be live in a few minutes at: https://nitturkaryash.github.io/chic-salon-ecosystem-main/"
+echo "If you see a white screen, please wait a few minutes and hard refresh the page (Ctrl+Shift+R or Cmd+Shift+R)" 
