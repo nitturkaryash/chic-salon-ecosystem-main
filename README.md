@@ -1,69 +1,137 @@
-# Welcome to your Lovable project
+# Salon Management System
 
-## Project info
+A modern, full-featured salon management system built with React and TypeScript.
 
-**URL**: https://lovable.dev/projects/de657ade-1c14-4540-9ee1-d7c7aa301034
+## Features
 
-## How can I edit this code?
+- 📅 **Appointment Management**
+  - Book and manage client appointments
+  - View daily/weekly schedule
+  - Time slot selection
+  - Service duration tracking
 
-There are several ways of editing your application.
+- 👥 **Client Management**
+  - Client profiles with contact information
+  - Visit history
+  - Total spend tracking
+  - Search and filter clients
 
-**Use Lovable**
+- 💇‍♀️ **Stylist Management**
+  - Stylist profiles
+  - Service assignments
+  - Specialization tracking
+  - Contact information
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/de657ade-1c14-4540-9ee1-d7c7aa301034) and start prompting.
+- 🛍️ **POS (Point of Sale)**
+  - Quick service selection
+  - Multiple payment methods (Cash, Card, UPI, BNPL)
+  - GST handling
+  - Order management
 
-Changes made via Lovable will be committed automatically to this repo.
+- 📦 **Services Management**
+  - Create and manage service catalog
+  - Set prices and duration
+  - Service descriptions
+  - Category organization
 
-**Use your preferred IDE**
+- 📝 **Order Management**
+  - Order tracking
+  - Payment status
+  - Fulfillment status
+  - Order notes
+  - Search and filter orders
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js (v14 or higher)
+- npm or yarn
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   cd salon-management-system
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Technology Stack
+
+- **Frontend Framework**: React
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **State Management**: React Hooks
+- **Data Persistence**: LocalStorage
+- **Icons**: Lucide Icons
+- **Date Handling**: date-fns
+
+## Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+├── pages/             # Page components
+├── lib/              # Utility functions
+└── App.tsx           # Main application component
 ```
 
-**Edit a file directly in GitHub**
+## Features in Detail
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Appointment Management
+- Interactive calendar for date selection
+- Time slot management
+- Service duration consideration
+- Client assignment
 
-**Use GitHub Codespaces**
+### Client Management
+- Detailed client profiles
+- Visit history tracking
+- Spending analytics
+- Easy search and filtering
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### POS System
+- Quick service selection
+- Multiple payment methods
+- Tax handling
+- Order creation and management
 
-## What technologies are used for this project?
+### Service Management
+- Service catalog
+- Price and duration settings
+- Service categorization
 
-This project is built with .
+### Order Tracking
+- Complete order history
+- Payment status tracking
+- Fulfillment status
+- Order notes and updates
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contributing
 
-## How can I deploy this project?
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Simply open [Lovable](https://lovable.dev/projects/de657ade-1c14-4540-9ee1-d7c7aa301034) and click on Share -> Publish.
+## License
 
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+This project is licensed under the MIT License - see the LICENSE file for details
