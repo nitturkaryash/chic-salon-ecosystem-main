@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  base: '/chic-salon-ecosystem-main/',
   plugins: [
     react(),
     mode === 'development' &&

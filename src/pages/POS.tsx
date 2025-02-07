@@ -25,6 +25,7 @@ interface Service {
   name: string;
   price: number;
   duration: string;
+  description?: string;
 }
 
 interface CartItem extends Service {
@@ -56,14 +57,6 @@ interface AppointmentCustomer {
   phone: string;
 }
 
-const services: Service[] = [
-  { id: 1, name: "Haircut & Style", price: 800, duration: "60" },
-  { id: 2, name: "Hair Color", price: 2500, duration: "120" },
-  { id: 3, name: "Manicure", price: 500, duration: "45" },
-  { id: 4, name: "Pedicure", price: 700, duration: "60" },
-  { id: 5, name: "Facial", price: 1500, duration: "90" },
-];
-
 const timeSlots = [
   "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
   "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
@@ -79,11 +72,26 @@ const POS = () => {
   const [appointmentCustomers, setAppointmentCustomers] = useState<AppointmentCustomer[]>([]);
   const [customerSearchTerm, setCustomerSearchTerm] = useState("");
   const [selectedTimeSlot, setSelectedTimeSlot] = useState<string>("");
+  const [services, setServices] = useState<Service[]>([]);
   const [newCustomer, setNewCustomer] = useState({
     name: "",
     email: "",
     phone: "",
   });
+
+  // Load services from localStorage
+  useEffect(() => {
+    const savedServices = localStorage.getItem('salonServices');
+    if (savedServices) {
+      try {
+        const parsedServices = JSON.parse(savedServices);
+        setServices(parsedServices);
+      } catch (error) {
+        console.error('Error loading services:', error);
+        setServices([]);
+      }
+    }
+  }, []);
 
   // Load appointment customers from localStorage
   useEffect(() => {
